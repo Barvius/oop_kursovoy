@@ -14,6 +14,14 @@ int Platform::GetBumpDistance(int val) {
 	return BumpDistance;
 }
 
+void Platform::MovePositionY(int dy) {
+	Position.y += dy;
+}
+
+Coord Platform::GetPosition() {
+	return Position;
+}
+
 Platform::Platform(){
 	Position.x = 0;
 	Position.y = 0;

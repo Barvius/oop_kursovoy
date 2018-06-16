@@ -1,5 +1,6 @@
 #pragma once
 #include "Platform.h"
+
 class PlatformOneOff : public Platform {
 private:
 	bool Used = false;

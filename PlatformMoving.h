@@ -1,5 +1,6 @@
 #pragma once
 #include "Platform.h"
+
 class PlatformMoving : public Platform {
 private:
 	int Direction = 1;

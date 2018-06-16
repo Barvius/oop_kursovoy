@@ -9,28 +9,16 @@ int MenuIthems::GetH() {
 }
 
 void MenuIthems::Draw() {
-	/*glColor3f(0.0f, 0.8f, 0.5f);
-	glBegin(GL_QUADS);
-	glVertex2d(x - w / 2, y - h / 2);
-	glVertex2d(x - w / 2, y + h / 2);
-	glVertex2d(x + w / 2, y + h / 2);
-	glVertex2d(x + w / 2, y - h / 2);
-	glEnd();*/
 	if (active) {
 		glColor3fv(text_color_active);
-		//std::cout << "true" << std::endl;
 	}
 	else {
 		glColor3fv(text_color);
 	}
-
-	
-	//std::cout << strlen(text) << std::endl;
 	glRasterPos2i(x-strlen(text)*9/2, y-h/2-9/2);
 	for (int j = 0; j < strlen(text); j++) {
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, text[j]);	
 	}
-	
 }
 
 bool MenuIthems::GetStatus() {
@@ -64,6 +52,7 @@ MenuIthems::MenuIthems(const MenuIthems& obj) {
 	text = new char[strlen(obj.text) + 1];
 	memcpy(text, obj.text, strlen(obj.text) + 1);
 	active = obj.active;
+	
 }
 
 MenuIthems::~MenuIthems(){

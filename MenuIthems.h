@@ -1,6 +1,5 @@
 #pragma once
 #include <GL/glut.h> 
-#include <GL/gl.h> 
 
 class MenuIthems {
 private:

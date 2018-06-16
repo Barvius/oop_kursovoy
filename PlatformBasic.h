@@ -1,5 +1,6 @@
 #pragma once
 #include "Platform.h"
+
 class PlatformBasic : public Platform {
 public:
 	void Draw();

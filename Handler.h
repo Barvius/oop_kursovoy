@@ -4,23 +4,20 @@
 
 class Handler{
 private:
-	static Handler* p_instance;
+	enum State { MAIN_MENU, MENU_AUTHOR, GAME, GAME_END };
+	State _State = MAIN_MENU;
+	Game _G;
+	Menu _M;
+	GLuint _Texture;
+	static Handler* _p_instance;
 	Handler();
-	Handler(GLuint);
+	Handler(const Handler&);
 	~Handler();
-
-	bool _Menu_active = true;
-	bool _Game = false;
-	Game G;
-	Menu M;
-	GLuint Texture;
 public:
 	bool Calculate();
 	void Render();
 	void Key(int);
 	void SetTexture(GLuint);
 	static Handler* instance();
-	
-
 };
 

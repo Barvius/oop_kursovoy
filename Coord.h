@@ -6,9 +6,6 @@ struct Coord{
 		x = _x;
 		y = _y;
 	}
-	/*Coord operator = (Coord &obj) {
-		return Coord(obj.x, obj.y);
-	}*/
 	int x;
 	int y;
 };

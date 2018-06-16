@@ -1,5 +1,6 @@
 #pragma once
 #include "Platform.h"
+
 class PlatformToss : public Platform {
 public:
 	void Draw();

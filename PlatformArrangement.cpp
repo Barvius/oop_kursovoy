@@ -1,6 +1,5 @@
 #include "PlatformArrangement.h"
 
-
 Platform* PlatformArrangement::New(Coord coord,GLuint texture) {
 	switch (this->Gen()) {
 	case 1:
@@ -21,36 +20,26 @@ Platform* PlatformArrangement::New(Coord coord,GLuint texture) {
 }
 
 int PlatformArrangement::GetX() {
-	random_device rd;
-	mt19937 gen(rd());
-	uniform_int_distribution<> dis(35, 330);
-	return dis(gen);
-}
-
-int PlatformArrangement::GetY() {
-	random_device rd;
-	mt19937 gen(rd());
-	uniform_int_distribution<> dis(0, 530);
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> dis(35, 330);
 	return dis(gen);
 }
 
 int PlatformArrangement::Gen() {
-	random_device rd;
-	mt19937 gen(rd());
-	uniform_real_distribution<> dis(0, 1);
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_real_distribution<> dis(0, 1);
 	float val = dis(gen);
-	int ReturnValue = 1;
-	//cout << val << endl;
 	for (int i = 0; i < N; i++) {
 		if (ORT[i] >= val) {
 			return i + 1;
 		}
 	}
-	//cout << ReturnValue << endl;
 	return 1;
 }
 
-PlatformArrangement::PlatformArrangement(){
+PlatformArrangement::PlatformArrangement() {
 	float val = 0;
 	for (int i = 0; i < N; i++) {
 		val += MV[i];
@@ -58,6 +47,5 @@ PlatformArrangement::PlatformArrangement(){
 	}
 }
 
-PlatformArrangement::~PlatformArrangement()
-{
+PlatformArrangement::~PlatformArrangement() {
 }
