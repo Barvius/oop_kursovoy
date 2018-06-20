@@ -15,7 +15,7 @@ void Game::New() {
 	std::mt19937 gen(rd());
 	_Platform[0] = new PlatformBasic(Coord(200, 50), _Texture);
 	for (i = 1; i < N_PLATFORM; i++) {
-		std::uniform_int_distribution<> dis(_Platform[i - 1]->GetPosition().y + 35 , _Platform[i - 1]->GetPosition().y + 65);
+		std::uniform_int_distribution<> dis(_Platform[i - 1]->GetPosition().y + 45 , _Platform[i - 1]->GetPosition().y + 65);
 		int __y = dis(gen);
 		_Platform[i] = _PA.New(Coord(_PA.GetX(), __y), _Texture);
 	}
@@ -42,8 +42,9 @@ bool Game::Calculate() {
 		dy += 0.2;
 		_Person.SetPositionY(_Person.GetPosition().y - dy);
 		if (_Person.GetPosition().y > 250) {
+			_Person.SetPositionY(250);
 			for (i = 0; i < N_PLATFORM; i++) {
-				_Person.SetPositionY(250);
+				
 				_Platform[i]->MovePositionY(dy);
 				_Score += -dy;
 				if (_Platform[i]->GetPosition().y < 0) {

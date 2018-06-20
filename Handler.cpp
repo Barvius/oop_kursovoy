@@ -110,7 +110,7 @@ void Handler::SetTexture(GLuint t) {
 	_G = Game(_Texture);
 	_M = Menu(200,300);
 	_M.AddIthems("Start game");
-	_M.AddIthems("About");
+	_M.AddIthems("Creator");
 	_M.AddIthems("Exit");
 }
 

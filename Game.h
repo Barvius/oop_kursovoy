@@ -13,7 +13,7 @@
 
 #include "Menu.h"
 
-#define N_PLATFORM 12
+#define N_PLATFORM 11
 
 class Game {
 private:

@@ -73,7 +73,7 @@ GLuint LoadTexture(const char * filename, int width, int height)
 }
 
 int main(int argc, char **argv) {
-	const char* WindowsTitle = { "Doodle Jump" };
+	const char* WindowsTitle = { "Platform Jumper" };
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 	glutInitWindowSize(400, 600);
@@ -93,7 +93,7 @@ int main(int argc, char **argv) {
 		glutPostRedisplay();
 	});
 	glutIdleFunc(animate);
-	Handler::instance()->SetTexture(LoadTexture("doodle_platform.bmp", 256, 256));
+	Handler::instance()->SetTexture(LoadTexture("texture.GLtex", 256, 256));
 	glutMainLoop();
 	return 0;
 }
